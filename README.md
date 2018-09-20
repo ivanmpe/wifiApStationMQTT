@@ -1,2 +1,2 @@
 # wifiApStationMQTT
-NodeMCU em modo access point/station utilizando em simultâneo MQTT.
+NodeMCU em modo AccessPoint/station e com conexão MQTT.

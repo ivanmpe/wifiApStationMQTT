@@ -2,17 +2,7 @@
 #include <PubSubClient.h> // Importa a Biblioteca PubSubClient
 
 
-#define D0    16
-  #define D1    5
-  #define D2    4
-  #define D3    0
-  #define D4    2
-  #define D5    14
-  #define D6    12
-  #define D7    13
-  #define D8    15
-  #define D9    3
-  #define D10   1
+#define PIN_D3 D3
 
 #define TOPICO_SUBSCRIBE ""     //tópico MQTT de escuta
 #define ID_MQTT  ""
@@ -72,8 +62,8 @@ void InitOutput(void)
 {
     //IMPORTANTE: o Led já contido na placa é acionado com lógica invertida (ou seja,
     //enviar HIGH para o output faz o Led apagar / enviar LOW faz o Led acender)
-    pinMode(D0, OUTPUT);
-    digitalWrite(D0, HIGH);          
+    pinMode(PIN_D3, OUTPUT);
+    digitalWrite(PIN_D3, HIGH);          
 }
 
 //Função: inicializa comunicação serial com baudrate 115200 (para fins de monitorar no terminal serial 
@@ -127,17 +117,17 @@ void mqtt_callback(char* topic, byte* payload, unsigned int length)
     //verifica se deve colocar nivel alto de tensão na saída D0:
     //IMPORTANTE: o Led já contido na placa é acionado com lógica invertida (ou seja,
     //enviar HIGH para o output faz o Led apagar / enviar LOW faz o Led acender)
-    if (msg.equals("1"))
+    if (msg.equals("0"))
     {
-        digitalWrite(D0, LOW);
-        EstadoSaida = '1';
+        digitalWrite(PIN_D3, LOW);
+        EstadoSaida = '0';
     }
 
     //verifica se deve colocar nivel alto de tensão na saída D0:
-    if (msg.equals("0"))
+    if (msg.equals("1"))
     {
-        digitalWrite(D0, HIGH);
-        EstadoSaida = '0';
+        digitalWrite(PIN_D3, HIGH);
+        EstadoSaida = '1';
     }
     
 }

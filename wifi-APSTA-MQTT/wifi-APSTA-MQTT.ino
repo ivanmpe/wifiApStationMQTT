@@ -19,10 +19,10 @@ const char* senha = "985090300"; // Senha da rede WI-FI que deseja se conectar
 
 // MQTT
 //const char* BROKER_MQTT = "ifce.sanusb.org"; //URL do broker MQTT que se deseja utilizar
-const char* BROKER_MQTT = "server.cloudmqtt.com";
-int BROKER_PORT = port; // Porta do Broker MQTT
-const char* MQTTUSER= " ";
-const char* MQTTPASSWORD = " ";
+const char* BROKER_MQTT = "m13.cloudmqtt.com";
+int BROKER_PORT = 13728; // Porta do Broker MQTT
+const char* MQTTUSER= "xmvxeajy";
+const char* MQTTPASSWORD = "_rdhkvlq9-aB";
 
 //Variáveis e objetos globais
 WiFiClient espClient; // Cria o objeto espClient

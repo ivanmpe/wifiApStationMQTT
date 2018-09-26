@@ -1,20 +1,20 @@
-#includ-e <ESP8266WiFi.h>
+#include <ESP8266WiFi.h>
 #include <PubSubClient.h> // Importa a Biblioteca PubSubClient
-
 
 #define PIN_D3 D3
 
-#define TOPICO_SUBSCRIBE ""     //tópico MQTT de escuta
-#define ID_MQTT  ""
-#define TOPICO_PUBLISH ""
+
+#define TOPICO_SUBSCRIBE "nodemcu1/led"     //tópico MQTT de escuta
+#define ID_MQTT  "ivanifce"
+#define TOPICO_PUBLISH "/nodemc1/status"
 
 const char* ssid = "NODEMCU1";
 const char* password = "12345678";
 
 
 // WIFI
-const char* rede = ""; // SSID / nome da rede WI-FI que deseja se conectar
-const char* senha = ""; // Senha da rede WI-FI que deseja se conectar
+const char* rede = "Winter is Coming"; // SSID / nome da rede WI-FI que deseja se conectar
+const char* senha = "985090300"; // Senha da rede WI-FI que deseja se conectar
  
 
 // MQTT
@@ -45,7 +45,7 @@ void setup() {
   initSerial();
   initWiFi();
   WiFi.mode(WIFI_AP_STA); 
-  WiFi.softAP(ssid, password, 2, 0);
+  WiFi.softAP(ssid, password);
   Serial.println(WiFi.softAPIP());
     
 }
@@ -63,7 +63,7 @@ void InitOutput(void)
     //IMPORTANTE: o Led já contido na placa é acionado com lógica invertida (ou seja,
     //enviar HIGH para o output faz o Led apagar / enviar LOW faz o Led acender)
     pinMode(PIN_D3, OUTPUT);
-    digitalWrite(PIN_D3, HIGH);          
+    digitalWrite(PIN_D3, LOW);          
 }
 
 //Função: inicializa comunicação serial com baudrate 115200 (para fins de monitorar no terminal serial 

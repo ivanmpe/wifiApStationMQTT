@@ -5,24 +5,24 @@
 
 
 #define TOPICO_SUBSCRIBE "nodemcu1/led"     //tópico MQTT de escuta
-#define ID_MQTT  "ivanifce"
-#define TOPICO_PUBLISH "/nodemc1/status"
+#define TOPICO_PUBLISH "/nodemcu1/status"   //tópico MQTT de publica
+#define ID_MQTT "digite_id_unico"
 
-const char* ssid = "NODEMCU1";
-const char* password = "12345678";
+const char* ssid = "ssid_da_rede_do_nodemcu";
+const char* password = "senha_da_rede_do_nodemcu";
 
 
 // WIFI
-const char* rede = "Winter is Coming"; // SSID / nome da rede WI-FI que deseja se conectar
-const char* senha = "985090300"; // Senha da rede WI-FI que deseja se conectar
+const char* rede = "nome_do_wifi"; // SSID / nome da rede WI-FI que deseja se conectar
+const char* senha = "senha_do_wifi"; // Senha da rede WI-FI que deseja se conectar
  
 
 // MQTT
 //const char* BROKER_MQTT = "ifce.sanusb.org"; //URL do broker MQTT que se deseja utilizar
-const char* BROKER_MQTT = "m13.cloudmqtt.com";
-int BROKER_PORT = 13728; // Porta do Broker MQTT
-const char* MQTTUSER= "xmvxeajy";
-const char* MQTTPASSWORD = "_rdhkvlq9-aB";
+const char* BROKER_MQTT = "servidormqtt"; //URL do broker MQTT que se deseja utilizar
+int BROKER_PORT = PORTA;                   // Porta do Broker MQTT
+const char* MQTTUSER= "xmvxeajy";          // Usuario de acesso ao Broker MQTT
+const char* MQTTPASSWORD = "_rdhkvlq9-aB"; //Senha de acesso ao Broker MQTT
 
 //Variáveis e objetos globais
 WiFiClient espClient; // Cria o objeto espClient
